@@ -53,6 +53,7 @@ service:
   externalPort: 9000
   internalPort: 9000
   labels:
+    app:jenkins
   annotations: {}
   # May be used in example for internal load balancing in GCP:
   # cloud.google.com/load-balancer-type: Internal
@@ -337,11 +338,11 @@ annotations: {}
 ## Adjust these values to your needs, but make sure that the memory limit is never under 4 GB
 resources:
   limits:
-    cpu: 800m
-    memory: 4Gi
-  requests:
     cpu: 400m
-    memory: 2Gi
+    memory: 1Gi
+  requests:
+    cpu: 100m
+    memory: 128Mi
 
 persistence:
   enabled: false
